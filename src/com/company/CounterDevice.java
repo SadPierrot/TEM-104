@@ -214,6 +214,7 @@ public class CounterDevice {
 
         profilePowerRamObtainDto = commandRam.buildProfileResponseRamObtain(dateTime);
         correctCommandsCounter.add(CommandDeviceCounter.PROFILE_POWER_FLASH_512K);
+        System.out.println();
 
     }
 
