@@ -40,8 +40,11 @@ public class DataOutput {
 
 
                 if (commandCounter == CommandDeviceCounter.PROFILE_POWER_FLASH_512K) {
-                    System.out.println("Время и дата последняя запись: " + dto.getProfilePowerFlash().getTime().format(formatter));
-                    System.out.println();
+                    System.out.println("Время и дата записи: " + dto.getProfilePowerFlash().getTekDat().format(formatter));
+                    System.out.println("Время и дата предыдущей: " + dto.getProfilePowerFlash().getPrevDat().format(formatter));
+                    System.out.println("Дробная часть интеграторов объема по каналам: " + dto.getProfilePowerFlash().gethIntV() + " м³");
+                    System.out.println("Дробная часть интеграторов массы по каналам: " + dto.getProfilePowerFlash().gethIntM() + " т");
+                    System.out.println("Дробная часть интеграторов энергии по системам: " + dto.getProfilePowerFlash().gethIntQ() + " МВт");
                 }
 
                 if (commandCounter == CommandDeviceCounter.RAM) {

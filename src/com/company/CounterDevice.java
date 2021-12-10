@@ -1,5 +1,6 @@
 package com.company;
 
+import com.company.build.ConstructionProfilePowerFlash;
 import com.company.comand.*;
 import com.company.crc.CS_NOT;
 import com.company.dto.*;
@@ -146,7 +147,6 @@ public class CounterDevice {
     }
 
     private void profilePowerObtainFlash512K() {
-        LocalDateTime buffer1 = LocalDateTime.of(1, 1, 1, 1, 0);
         CommandProfilePowerFlash commandProfilePowerFlash = new CommandProfilePowerFlash();
 
         int count = 0;
@@ -155,7 +155,7 @@ public class CounterDevice {
                 byte[] bytes = ByteBuffer.allocate(4).putInt(i).array();
 
                 byte[] biasBytes = {
-                       0x00, 0x04, 0x08, 0x18, 0x28, 0x38, 0x48, 0x58, 0x68, 0x6C, 0x7C,
+                        0x00, 0x04, 0x08, 0x18, 0x28, 0x38, 0x48, 0x58, 0x68, 0x6C, 0x7C,
                         (byte) 0x8C, (byte) 0x9C, (byte) 0xAC, (byte) 0xBC, (byte) 0xC0,
                         (byte) 0xC8, (byte) 0xE0, (byte) 0xEC,
 
@@ -179,12 +179,13 @@ public class CounterDevice {
                             ), 7 + byteOffsetSize[k]); //11
 
                     switch (biasBytes[k]) {
-                        case 0x00, 0x04 -> System.out.println(commandProfilePowerFlash.buildRandDate(arrBytePower));
-                        case 0x08, 0x18, 0x28 -> commandProfilePowerFlash.buildDataFlashFloat(arrBytePower);
+                        case 0x00, 0x04 -> commandProfilePowerFlash.buildRandDate(arrBytePower, biasBytes[k]);
+                        case 0x08, 0x18, 0x28 -> commandProfilePowerFlash.buildDataFlashFloat(arrBytePower, biasBytes[k]);
                         case 0x38, 0x48, 0x58, 0x68, 0x6C, 0x7C,
                                 (byte) 0x8C, (byte) 0x9C, (byte) 0xAC, (byte) 0xBC,
-                                (byte) 0xC0, (byte) 0xEC -> commandProfilePowerFlash.buildDataFlashLong(arrBytePower);
-                        case (byte) 0xC8, (byte) 0xE0 -> commandProfilePowerFlash.all(arrBytePower);
+                                (byte) 0xC0, (byte) 0xEC -> commandProfilePowerFlash.buildDataFlashLong(arrBytePower, biasBytes[k]);
+                        case (byte) 0xC8, (byte) 0xE0 -> commandProfilePowerFlash.all(arrBytePower, biasBytes[k]);
+                        case (byte) 0xFF -> commandProfilePowerFlash.buildCheckSum(arrBytePower, biasBytes[k]);
                         default -> System.out.println();
                     }
                 }
@@ -193,10 +194,10 @@ public class CounterDevice {
             }
             System.out.println();
         }
-
-        profilePowerFlashDto = commandProfilePowerFlash.buildProfilePowerFlash(buffer1);
+        profilePowerFlashDto = ConstructionProfilePowerFlash.returnPowerObtainFlash512K();
         correctCommandsCounter.add(CommandDeviceCounter.RAM);
     }
+
 
     private void profileRamObtain() {
         ArrayList<String> dateTime = new ArrayList<>();
