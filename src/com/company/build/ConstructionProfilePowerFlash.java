@@ -12,20 +12,20 @@ public class ConstructionProfilePowerFlash {
     public static float lIntV;
     public static float lIntM;
     public static float lIntQ;
-    public static int hIntV;
-    public static int hIntM;
-    public static int hIntQ;
-    public static int tRab;
-    public static int tNar;
-    public static int tMin;
-    public static int tMax;
-    public static int tDt;
-    public static int tTn;
-    public static int firTeher;
-    public static int secTeher;
+    public static float hIntV;
+    public static float hIntM;
+    public static float hIntQ;
+    public static float tRab;
+    public static float tNar;
+    public static float tMin;
+    public static float tMax;
+    public static float tDt;
+    public static float tTn;
+    public static float firTeher;
+    public static float secTeher;
     public static int[] t;
     public static int[] p;
-    public static int rshv;
+    public static float rshv;
 
 
 

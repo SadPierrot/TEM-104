@@ -12,7 +12,7 @@ public class Main {
     private static final ArrayList<ResponseDeviceDTO> devicesResponses = new ArrayList<>();
 
     private static final ArrayList<DeviceCounterDto> devicesDto = new ArrayList<>() {{
-        add(new DeviceCounterDto(1, List.of(CommandDeviceCounter.PROFILE_POWER_FLASH_512K, CommandDeviceCounter.PROFILE_POWER_128
+        add(new DeviceCounterDto(1, List.of(CommandDeviceCounter.PROFILE_POWER_FLASH_512K
         ), 3));
     }};
 

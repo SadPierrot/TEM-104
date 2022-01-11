@@ -8,25 +8,25 @@ public class ProfilePowerFlashDto {
     float lIntV;
     float lIntM;
     float lIntQ;
-    int hIntV;
-    int hIntM;
-    int hIntQ;
-    int tRab;
-    int tNar;
-    int tMin;
-    int tMax;
-    int tDt;
-    int tTn;
-    int firTeher;
-    int secTeher;
+    float hIntV;
+    float hIntM;
+    float hIntQ;
+    float tRab;
+    float tNar;
+    float tMin;
+    float tMax;
+    float tDt;
+    float tTn;
+    float firTeher;
+    float secTeher;
     int[] t;
     int[] p;
-    int rshv;
+    float rshv;
 
     public ProfilePowerFlashDto(LocalDateTime tekDat, LocalDateTime prevDat,
-                                float lIntV, float lIntM, float lIntQ,
-                                int hIntV, int hIntM, int hIntQ, int tRab, int tNar, int tMin, int tMax, int tDt,
-                                int tTn, int firTeher, int secTeher, int[] t, int[] p, int rshv) {
+                                float lIntV, float lIntM, float lIntQ, float hIntV, float hIntM,
+                                float hIntQ, float tRab, float tNar, float tMin, float tMax, float tDt,
+                                float tTn, float firTeher, float secTeher, int[] t, int[] p, float rshv) {
         this.tekDat = tekDat;
         this.prevDat = prevDat;
         this.lIntV = lIntV;
@@ -88,91 +88,91 @@ public class ProfilePowerFlashDto {
         this.lIntQ = lIntQ;
     }
 
-    public int gethIntV() {
+    public float gethIntV() {
         return hIntV;
     }
 
-    public void sethIntV(int hIntV) {
+    public void sethIntV(float hIntV) {
         this.hIntV = hIntV;
     }
 
-    public int gethIntM() {
+    public float gethIntM() {
         return hIntM;
     }
 
-    public void sethIntM(int hIntM) {
+    public void sethIntM(float hIntM) {
         this.hIntM = hIntM;
     }
 
-    public int gethIntQ() {
+    public float gethIntQ() {
         return hIntQ;
     }
 
-    public void sethIntQ(int hIntQ) {
+    public void sethIntQ(float hIntQ) {
         this.hIntQ = hIntQ;
     }
 
-    public int gettRab() {
+    public float gettRab() {
         return tRab;
     }
 
-    public void settRab(int tRab) {
+    public void settRab(float tRab) {
         this.tRab = tRab;
     }
 
-    public int gettNar() {
+    public float gettNar() {
         return tNar;
     }
 
-    public void settNar(int tNar) {
+    public void settNar(float tNar) {
         this.tNar = tNar;
     }
 
-    public int gettMin() {
+    public float gettMin() {
         return tMin;
     }
 
-    public void settMin(int tMin) {
+    public void settMin(float tMin) {
         this.tMin = tMin;
     }
 
-    public int gettMax() {
+    public float gettMax() {
         return tMax;
     }
 
-    public void settMax(int tMax) {
+    public void settMax(float tMax) {
         this.tMax = tMax;
     }
 
-    public int gettDt() {
+    public float gettDt() {
         return tDt;
     }
 
-    public void settDt(int tDt) {
+    public void settDt(float tDt) {
         this.tDt = tDt;
     }
 
-    public int gettTn() {
+    public float gettTn() {
         return tTn;
     }
 
-    public void settTn(int tTn) {
+    public void settTn(float tTn) {
         this.tTn = tTn;
     }
 
-    public int getFirTeher() {
+    public float getFirTeher() {
         return firTeher;
     }
 
-    public void setFirTeher(int firTeher) {
+    public void setFirTeher(float firTeher) {
         this.firTeher = firTeher;
     }
 
-    public int getSecTeher() {
+    public float getSecTeher() {
         return secTeher;
     }
 
-    public void setSecTeher(int secTeher) {
+    public void setSecTeher(float secTeher) {
         this.secTeher = secTeher;
     }
 
@@ -192,11 +192,11 @@ public class ProfilePowerFlashDto {
         this.p = p;
     }
 
-    public int getRshv() {
+    public float getRshv() {
         return rshv;
     }
 
-    public void setRshv(int rshv) {
+    public void setRshv(float rshv) {
         this.rshv = rshv;
     }
 }
